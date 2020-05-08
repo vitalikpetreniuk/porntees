@@ -1,0 +1,19 @@
+{% comment %}
+  The contents of the page.info.liquid template can be found in /sections/stockists.liquid
+  The contents of the page.info.liquid template can be found in /sections/returns-policy.liquid
+  The contents of the page.info.liquid template can be found in /sections/shipping-policies.liquid
+  The contents of the page.info.liquid template can be found in /sections/returns-exchanges.liquid
+{% endcomment %}
+
+<div class="page-info-layout">
+	<div class="pil-part pil-left">
+		{% section 'stockists' %}
+	</div>
+	<div class="pil-part pil-center">
+		{% section 'returns-policy' %}
+	</div>
+	<div class="pil-part pil-right">
+		{% section 'shipping-policies' %}
+		{% section 'returns-exchanges' %}
+	</div>
+</div>

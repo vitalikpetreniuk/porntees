@@ -1,0 +1,46 @@
+<div class="info-part shipping-policies">
+  <h2 class="info-heading">{{ section.settings.section_title | escape }}</h2>
+  <div class="info-text">{{ section.settings.text }}</div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Shipping policies",
+    "ko": "Shipping policies"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Shipping policies"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Shipping policies",
+        "ko": "Shipping policies"
+      },
+      "category": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ]
+}
+{% endschema %}

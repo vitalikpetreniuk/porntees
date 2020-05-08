@@ -1,0 +1,46 @@
+<div class="info-part stockists">
+  <h2 class="info-heading">{{ section.settings.section_title | escape }}</h2>
+  <div class="info-text">{{ section.settings.text }}</div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Stockists",
+    "ko": "Stockists"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Stockists"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Stockists",
+        "ko": "Stockists"
+      },
+      "category": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ]
+}
+{% endschema %}

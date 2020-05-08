@@ -1,0 +1,46 @@
+<div class="info-part returns-policy">
+  <h2 class="info-heading">{{ section.settings.section_title | escape }}</h2>
+  <div class="info-text">{{ section.settings.text }}</div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Returns policy",
+    "ko": "Returns policy"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Returns Policy"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Returns policy",
+        "ko": "Returns policy"
+      },
+      "category": {
+        "en": "Text",
+        "ko": "텍스트"
+      }
+    }
+  ]
+}
+{% endschema %}

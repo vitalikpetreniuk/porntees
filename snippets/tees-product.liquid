@@ -1,0 +1,42 @@
+{% comment %}
+    Renders a product card using "List" style
+
+    Accepts:
+    - product: {Object} Product Liquid object (required)
+    - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+    Usage:
+    {% include 'product-card-list', product: product, show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+<div class="product-item" id="product-{{product.id}}">
+  <div class="product-gallery owl-carousel">
+    {% for image in product.images %}
+      <div class="item">
+        <img id="{{ img_id }}"
+             class="product-image lazyload{% unless featured_image == image %} lazypreload{% endunless %}"
+             src="{{ image | img_url: '1296x1296' }}"
+             data-src="{{ img_url }}"
+             data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+             data-aspectratio="{{ image.aspect_ratio }}"
+             data-sizes="auto"
+             tabindex="-1"
+             alt="{{ image.alt | escape }}">
+       </div>
+    {% endfor %}
+  </div>
+  <div class="product-info">
+    <div class="pi-left">
+      <h2 class="product-title">{{ product.title }}.</h2>
+      <div class="product-price" data-price="{{ product.price }}"><span></span>US DOLLARS</div>
+      {% if product.tags.size > 0 %}
+        <div class="product-tags" style="display:none">{{ product.tags | join: ',' }}</div>
+      {% endif %} 
+      <div class="product-type" style="display:none">{{ product.type }}</div>
+    </div>
+    <div class="pi-right">
+      <button class="add to cart"><span class="want">want</span><span class="in-cart" style="display: none">IN CART</span></button>
+    </div>
+  </div>
+  <div class="product-gallery-counter"></div>
+</div>

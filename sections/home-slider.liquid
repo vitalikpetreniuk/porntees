@@ -1,0 +1,176 @@
+<div class="tees-slider owl-carousel">
+
+  {% for block in section.blocks %}
+    <div class="ts-item item" {{ block.shopify_attributes }}>
+      <img id="{{ img_id }}"
+         class="lazyload js"
+         src="{{ block.settings.image | img_url: '2048x2048' }}"
+         data-src="{{ img_url }}"
+         data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+         data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+         data-sizes="auto"
+         alt="{{ block.settings.image.alt | escape }}">
+    </div>
+  {% endfor %}
+
+</div>
+<div class="tees-slider-counter"></div>
+
+{% if section.blocks.size == 0 %}
+  {% include 'no-blocks' %}
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Homepage slider",
+    "ko": "홈페이지 슬라이더"
+  },
+  "class": "index-section homepage-slider",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": {
+        "en": "Section height",
+        "ko": "섹션 높이"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Extra Small",
+            "ko": "특소"
+          },
+          "value": "x-small"
+        },
+        {
+          "label": {
+            "en": "Small",
+            "ko": "스몰"
+          },
+          "value": "small"
+        },
+        {
+          "label": {
+            "en": "Medium",
+            "ko": "보통"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large",
+            "ko": "라지"
+          },
+          "value": "large"
+        },
+        {
+          "label": {
+            "en": "Extra Large",
+            "ko": "특대"
+          },
+          "value": "x-large"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Image",
+        "ko": "이미지"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image",
+            "ko": "이미지"
+          }
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": {
+            "en": "Image alignment",
+            "ko": "이미지 정렬"
+          },
+          "default": "center",
+          "options": [
+            {
+              "value": "top",
+              "label": {
+                "en": "Top",
+                "ko": "위쪽"
+              }
+            },
+            {
+              "value": "center",
+              "label": {
+                "en": "Middle",
+                "ko": "중간"
+              }
+            },
+            {
+              "value": "bottom",
+              "label": {
+                "en": "Bottom",
+                "ko": "아래쪽"
+              }
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "ko": "링크"
+          },
+          "info": {
+            "en": "Optional",
+            "ko": "선택 사항"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": {
+            "en": "Caption",
+            "ko": "캡션"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Homepage slider",
+        "ko": "홈페이지 슬라이더"
+      },
+      "category": {
+        "en": "Image",
+        "ko": "이미지"
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

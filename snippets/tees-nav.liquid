@@ -1,0 +1,44 @@
+{% comment %}
+    Renders a list of menu items
+    Accepts:
+    - linklist: {Object} Linklist Liquid object (required)
+    - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+
+    Usage:
+    {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+{% endcomment %}
+<ul class="site-nav list--inline{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}" id="SiteNav">
+  {% for link in linklists[linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% comment %}
+      Check if third-level nav exists on each parent link.
+    {% endcomment %}
+    {%- assign three_level_nav = false -%}
+    {% if link.links != blank %}
+      {% if link.levels == 2 %}
+        {%- assign three_level_nav = true -%}
+      {% endif %}
+    {% endif %}
+
+    {% if link.links != blank %}
+      <li class="{%if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" class="tees-nav_link{% if link.active %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+          <span class="tees-nav_label">{{ link.title | escape }}</span>
+        </a>
+        <span class="tees-nav_tags tees-nav_tags-cs" style="display:none">
+          {% for childlink in link.links %}
+            <span data-tag="{{ childlink.title | escape }}">{{ childlink.title | escape }}</span>
+          {% endfor %}
+        </span>
+      </li>
+    {% else %}
+      <li class="{%if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" class="tees-nav_link{% if link.active %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+          <span class="tees-nav_label">{{ link.title | escape }}</span>
+        </a>
+        <span class="tees-nav_tags" style="display:none"></span>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
