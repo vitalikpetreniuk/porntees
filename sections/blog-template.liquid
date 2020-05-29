@@ -1,25 +1,4 @@
-{% paginate blog.articles by 12 %}
-
-<div class="page-width">
-  <header class="section-header text-center">
-    <h1>{{ page_title }}</h1>
-    {% if blog.tags.size > 0 %}
-      <div class="blog-filter">
-        <label class="blog-filter__label select-label" for="BlogTagFilter">{{ 'collections.filters.title_tags' | t }}</label>
-        <div class="select-group">
-          <select id="BlogTagFilter" aria-describedby="a11y-refresh-page-message a11y-selection-message">
-            <option value="{{ blog.url }}">{{ 'blogs.article.all_topics' | t }}</option>
-            {% for tag in blog.all_tags %}
-              <option value="{{ blog.url }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
-            {% endfor %}
-          </select>
-          {% include 'icon-chevron-down' %}
-        </div>
-      </div>
-    {% endif %}
-  </header>
-</div>
-
+{% paginate blog.articles by 50 %}
 
 {% if section.settings.layout == 'grid' %}
   <div class="page-width">
@@ -109,85 +88,24 @@
     </ul>
   </div>
 {% else %}
+  <ul class="blog-list">
+    {% for article in blog.articles %}
+      <li data-id="{{ article.id }}">
+        <a href="#post-{{ article.id }}">{{ article.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
   <ul class="blog-list-view">
     {% for article in blog.articles %}
-      <li class="border-top">
+      <li id="post-{{ article.id }}" class="border-top" data-id="{{ article.id }}">
         <div class="page-width">
           <div class="grid">
             <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
               <div class="article-listing">
-                <h2 class="article__title h3"><a href="{{ article.url }}">{{ article.title }}</a></h2>
-                {% if section.settings.blog_show_author %}
-                  <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-                {% endif %}
-
-                {% if section.settings.blog_show_date %}
-                  <span class="article__date">
-                    {{ article.published_at | time_tag: format: 'date' }}
-                  </span>
-                {% endif %}
-
-                {% if article.image %}
-                  {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
-                  {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
-                  {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
-                  {% include 'image-style', image: article.image, height: 600, wrapper_id: img_wrapper_id, img_id: img_id %}
-
-                  <div id="{{ img_wrapper_id }}" class="article__list-image-wrapper js">
-                    <a href="{{ article.url }}" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;" class="article__list-image-container">
-                      <img id="{{ img_id }}"
-                           class="article__list-image lazyload"
-                           src="{{ article.image | img_url: '300x300' }}"
-                           data-src="{{ img_url }}"
-                           data-widths="[180, 360, 540, 720, 905, 1090, 1296, 1512, 1728, 2048]"
-                           data-aspectratio="{{ article.image.aspect_ratio }}"
-                           data-sizes="auto"
-                           alt="">
-                    </a>
-                  </div>
-
-                  <noscript>
-                    <p>
-                      <a href="{{ article.url }}">
-                        {{ article | img_url: '455x300', scale: 2 | img_tag: article.title }}
-                      </a>
-                    </p>
-                  </noscript>
-                {% endif %}
-
+                <h2 style="display: none;">{{ article.title }}</h2>
                 <div class="rte">
-                  {% if article.excerpt.size > 0 %}
-                    {{ article.excerpt }}
-                  {% else %}
-                    {{ article.content | strip_html | truncate: 150 }}
-                  {% endif %}
+                    {{ article.content }}
                 </div>
-
-                {% if article.tags.size > 0 %}
-                  <div class="article__tags article__tags--list rte">
-                    {{ 'blogs.article.posted_in' | t }}
-                    {% for tag in article.tags %}
-                      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-
-                <ul class="list--inline article__meta-buttons">
-                  <li>
-                    <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
-                      {{ 'blogs.article.read_more' | t }}
-                    </a>
-                  </li>
-
-                  {% if blog.comments_enabled? and article.comments_count > 0 %}
-                    <li>
-                      <a href="{{ article.url }}#comments" class="article__comment-count btn btn--tertiary btn--small">
-                        {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
               </div>
             </div>
           </div>

@@ -1,0 +1,5 @@
+<script>
+  {% for variant in product.variants %}
+  variants[{{ variant.id }}] = {{ variant.inventory_quantity }};
+  {% endfor %}
+</script>

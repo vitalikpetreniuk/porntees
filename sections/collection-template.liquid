@@ -12,8 +12,16 @@
 {% if section.settings.layout == 'grid' %}
   {%- assign limit = section.settings.grid | times: section.settings.rows -%}
 {% else %}
-  {%- assign limit = 10 -%}
+  {%- assign limit = 5 -%}
 {% endif %}
+
+<script>
+  var variants = {};
+</script>
+
+{% for product in collection.products %}
+	{% include 'var-product', product: product, show_vendor: section.settings.show_vendor %}
+{% endfor %}
 
 {% paginate collection.products by limit %}
 
@@ -25,6 +33,54 @@
         {% include 'tees-product', product: product, show_vendor: section.settings.show_vendor %}
       {% endfor %}
     </div>
+    <div class="no-available-items" style="display: none;">
+      <div class="nai-content">
+        <h2>THERE ARE NO AVAILABLE ITEMS</h2>
+        <p>SUBSCRIBE TO OUR NEWSLETTER <br>TO RECEIVE UPDATES ON NEW <br>STOCK AND COLLECTIONS.</p>
+
+        <div class="subscribe-form">
+          {%- assign formId = 'Contact_' | append: section.id -%}
+          {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+            {%- if form.posted_successfully? -%}
+              <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                {{ 'general.newsletter_form.confirmation' | t }}
+              </p>
+            {%- endif -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+              <input type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="input-group__field{% if form.errors %} input--error{% endif %}"
+                value="{{ form.email }}"
+                placeholder="EMAIL"
+                aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="{{ formId }}-email-error"
+                  data-form-status
+                {% endif %}
+                >
+              <span class="input-group__btn">
+                <button type="submit" class="btn" name="commit" id="Subscribe">
+                  <span>SEND</span>
+                </button>
+              </span>
+            </div>
+            {%- if form.errors contains 'email' -%}
+              <span id="{{ formId }}-email-error" class="input-error-message">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                {% include 'icon-error' %}
+                <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              </span>
+            {%- endif -%}
+          {% endform %}
+        </div>
+      </div>
+    </div>
 
     {% if is_empty_collection %}
       <div class="grid__item small--text-center">
@@ -32,8 +88,68 @@
       </div>
     {% endif %}
   </div>
-  <div class="products-list-loaded"></div>
 </div>
+
+<div class="product-configurations" data-url="">
+  <div class="pc-description">
+    <h3 class="pcd-title"></h3>
+    <div class="pcd-price" style="display: none"><span data-price="0">0</span>US DOLLARS</div>
+    <div class="pcd-info"></div>
+  </div>
+  <div class="pc-price_share">
+    <div class="pcp-price"><span data-price="0">0</span>US DOLLARS</div>
+    <div class="pcp-share">
+      <div class="share-list">
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+          <span class="share-link"><a class="a2a_button_pinterest" target="_blank">PINTEREST</a></span>
+          <span class="share-link"><a class="a2a_button_facebook" target="_blank">FACEBOOK</a></span> 
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
+        <!-- <span class="share-link"><a href="#" class="pinterest">PINTEREST</a></span>
+        <span class="share-link"><a href="#" class="facebook">FACEBOOK</a></span> -->
+        <span class="copy-link" data-link="">COPY LINK</span> 
+      </div>
+      <button>SHARE</button>
+    </div>
+  </div>
+  <div class="pc-color">
+    <ul>
+      <li class="black" data-color="black"></li>
+      <li class="red" data-color="red"></li>
+      <li class="purple" data-color="purple"></li>
+      <li class="green" data-color="green"></li>
+      <li class="light-green" data-color="light-green"></li>
+      <li class="gray" data-color="gray"></li>
+      <li class="tiedye" data-color="tiedye"></li>
+      <li class="pink" data-color="pink"></li>
+      <li class="light-pink" data-color="light-pink"></li>
+      <li class="brown" data-color="brown"></li>
+      <li class="white" data-color="white"></li>
+      <li class="yellow" data-color="yellow"></li>
+    </ul>
+  </div>
+  <div class="pc-size">
+    <ul>
+      <li class="size size-s" data-size="S"><span>S</span><span>S</span><span>S</span><span>S</span><span>S</span></li>
+      <li class="size size-m" data-size="M"><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span></li>
+      <li class="size size-l" data-size="L"><span>L</span><span>L</span><span>L</span><span>L</span><span>L</span></li>
+      <li class="size size-xl" data-size="XL"><span>XL</span><span>XL</span><span>XL</span><span>XL</span><span>XL</span></li>
+      <li class="size size-xxl" data-size="XXL"><span>XXL</span><span>XXL</span><span>XXL</span><span>XXL</span><span>XXL</span></li>
+    </ul>
+  </div>
+  <div class="pc-cart">
+    <button class="pc-add_to_cart add-to-cart">
+      <span class="select-a-size">SELECT A SIZE</span>
+      <span class="add-to-cart">ADD TO CART</span>
+      <span class="in-cart">IN CART</span>
+      <span class="out-of-stock">OUT OF STOCK</span>
+      <span class="adding"><span>ADDING</span><span>ADDING</span></span>
+    </button>
+  </div>
+</div>
+<div class="product-configurations-overlay"></div>
 
 {% endpaginate %}
 

@@ -9,7 +9,7 @@
     {% include 'product-card-list', product: product, show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-<div class="product-item" id="product-{{product.id}}">
+<div class="product-item" id="product-{{product.id}}" data-id="{{product.id}}" data-url="{{product.url}}">
   <div class="product-gallery owl-carousel">
     {% for image in product.images %}
       <div class="item">
@@ -35,8 +35,11 @@
       <div class="product-type" style="display:none">{{ product.type }}</div>
     </div>
     <div class="pi-right">
-      <button class="add to cart"><span class="want">want</span><span class="in-cart" style="display: none">IN CART</span></button>
+      <button class="want-this"><span class="want">want</span><span class="in-cart" style="display: none">IN CART</span></button>
     </div>
   </div>
-  <div class="product-gallery-counter"></div>
+  <div class="product-gallery-counter"><span class="current"><span>1</span></span>/<span class="total"></span></div>
+  
+  <script>
+  </script>
 </div>

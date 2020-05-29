@@ -2,8 +2,8 @@
   "current": {
     "color_text": "#3d4246",
     "color_body_text": "#69727b",
-    "color_sale_text": "#557B97",
-    "color_button": "#557B97",
+    "color_sale_text": "#557b97",
+    "color_button": "#557b97",
     "color_button_text": "#fff",
     "color_small_button_text_border": "#3d4246",
     "color_text_field_text": "#000",
@@ -19,77 +19,539 @@
     "type_base_font": "work_sans_n4",
     "type_base_size": 16,
     "type_bold_product_titles": false,
+    "share_image": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "align_logo": "left",
+          "logo": "",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#7796a8",
+          "color_text": "#fff"
+        }
       },
       "hero": {
         "type": "hero",
+        "disabled": true,
         "settings": {
-          "text_size": "large"
+          "image": "",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
         }
       },
       "slideshow": {
         "type": "slideshow",
+        "disabled": true,
         "blocks": {
           "slideshow-0": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "",
+              "alignment": "center center",
+              "slide_title": "Image slide",
+              "subheading": "Tell your brand's story through images",
+              "button_label": "",
+              "button_link": ""
+            }
           },
           "slideshow-1": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "",
+              "alignment": "center center",
+              "slide_title": "Image slide",
+              "subheading": "Tell your brand's story through images",
+              "button_label": "",
+              "button_link": ""
+            }
           }
         },
         "block_order": [
           "slideshow-0",
           "slideshow-1"
         ],
-        "settings": {}
+        "settings": {
+          "slideshow_height": "adapt",
+          "text_size": "medium",
+          "text_alignment": "center center",
+          "show_overlay": true,
+          "autorotate": false,
+          "autorotate_speed": 5
+        }
       },
       "featured-collections": {
         "type": "collection",
+        "disabled": true,
         "settings": {
-          "collection": "frontpage"
+          "title": "Featured collection",
+          "collection": "",
+          "grid": 3,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
         }
       },
       "feature-row": {
         "type": "feature-row",
-        "settings": {}
+        "disabled": true,
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
       },
       "footer": {
         "type": "footer",
         "blocks": {
           "link_list": {
             "type": "link_list",
-            "settings": {}
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
           },
           "text": {
             "type": "text",
-            "settings": {}
+            "settings": {
+              "title": "Talk about your business",
+              "text": "<p>PORNTEES IS A TEL-AVIV BASED BRAND INFLUENCED BY SEXUALITY, NATURE AND ART, CURATED BY NOA RENNERT. WE ARE ALL ABOUT SENSUALITY AND FLUIDITY. CUSTOM-MADE, ONE OFF PIECES, PRINTED WITH PASSION, SLIDING INTO DMS SINCE 2018.<\/p>"
+            }
           },
-          "newsletter": {
+          "1588165036657": {
+            "type": "text",
+            "settings": {
+              "title": "",
+              "text": "<p>T&nbsp;<a href=\"tel:+972523446165\" title=\"tel:+972523446165\">+972-52-344-6165<\/a><\/p>\n<p>E&nbsp;<a href=\"mailto:info@porntees.com\" title=\"mailto:info@porntees.com\">INFO@PORNTEES.COM<\/a><\/p>\n<p><strong>SIGN UP TO OUR NEWSLETTER<\/strong><\/p>\n<p>WWW BY <a href=\"#\" title=\"#\">GYMNASIUM<\/a><\/p>"
+            }
+          },
+          "1588165082201": {
             "type": "newsletter",
-            "settings": {}
+            "settings": {
+              "title": "Newsletter"
+            }
           }
         },
         "block_order": [
           "link_list",
           "text",
-          "newsletter"
+          "1588165036657",
+          "1588165082201"
         ],
-        "settings": {}
+        "settings": {
+          "show_payment_icons": false,
+          "color_footer_bg": "#f5f5f5",
+          "color_footer_text": "#3d4246"
+        }
+      },
+      "1587043969102": {
+        "type": "home-slider",
+        "blocks": {
+          "1587043969102-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home1.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1587043969102-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home2.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1587043969102-2": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home3.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1587044011445": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/home4.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "1587043969102-0",
+          "1587043969102-1",
+          "1587043969102-2",
+          "1587044011445"
+        ],
+        "settings": {
+          "section_height": "medium"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "list",
+          "grid": 4,
+          "rows": 2,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": false,
+          "tags_enable": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": true,
+          "show_share_buttons": true
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "gallery": {
+        "type": "gallery",
+        "blocks": {
+          "1588227945151": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4a802077192d322f8e8bcaad7530316f.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588227955391": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9fe0b69b31c22ea38bf3e5dcb544f066.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588227961566": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/52ff96d2d7bd99735c557efdd20987c3.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588227966290": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal2.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228030076": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/81AWHunyR5L._SX522.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228044432": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/81db6063f8f3ea27500ccc4514f9be29.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228051040": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/116b24eeaff760c1bff68c06852645f1.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228057662": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Dolphin-Coloring-Pages-Printable-Free.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228064151": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/original.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228071070": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal3.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228077029": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/887625263638baebc56a4c0286c98df9.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228083726": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Dolphin-Coloring-Pages-Printable-Free.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228089300": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/oyster.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228094227": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Repeat_Grid_1.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228107376": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/s-l300_1.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1588228113320": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/tumblr_pbm1wsXOg81ry4cywo2_r1_1280.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162228670": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal5.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162291160": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal6.jpg",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162307102": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/s-l300_1.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162321088": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/116b24eeaff760c1bff68c06852645f1.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162329173": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/887625263638baebc56a4c0286c98df9.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162337308": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4a802077192d322f8e8bcaad7530316f.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162413935": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal7.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162420729": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal6.png",
+              "alignment": "top",
+              "link": "",
+              "cta_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "1588227945151",
+          "1590162413935",
+          "1588227955391",
+          "1588227961566",
+          "1588227966290",
+          "1588228030076",
+          "1590162420729",
+          "1588228044432",
+          "1588228051040",
+          "1588228057662",
+          "1588228064151",
+          "1588228071070",
+          "1588228077029",
+          "1588228083726",
+          "1588228089300",
+          "1588228094227",
+          "1588228107376",
+          "1588228113320",
+          "1590162228670",
+          "1590162291160",
+          "1590162307102",
+          "1590162321088",
+          "1590162329173",
+          "1590162337308"
+        ],
+        "settings": {
+          "section_height": "large"
+        }
+      },
+      "stockists": {
+        "type": "stockists",
+        "settings": {
+          "section_title": "Stockists",
+          "text": "<p>WE MUST SHOP<br>DIZENGOFF ST 138. TEL AVIV-YAFO<br>MONTEFIORE ST 30. TEL AVIV-YAFO<\/p>\n<p><\/p>\n<p>BOUTIQUE 5<br>LINCOLN ST 5, TEL AVIV-YAFO<\/p>\n<p><\/p>"
+        }
+      },
+      "returns-policy": {
+        "type": "returns-policy",
+        "settings": {
+          "section_title": "Returns Policy",
+          "text": "<p>WE ACCEPT RETURNS\/ EXCHANGES WITHIN 14 BUSINESS DAYS OF RECEIPT OF YOUR PACKAGE UPON APPROVAL BY PORNTEES. ITEM MUST BE RETURNED IN ITS ORIGINAL PACKAGING AND CONDITION VIA REGISTERED INSURED MAIL. THE CUSTOMER IS RESPONSIBLE FOR RETURN SHIPPING. WE RECOMMEND THAT ANY RETURN MADE TO US WILL BE FULLY INSURED AND VIA A CARRIER THAT PROVIDES TRACKING INFORMATION. IN THE EVENT THAT A RETURNED PACKAGE IS LOST OR DAMAGED DURING THE SHIPMENT BACK, WE WILL NOT BE ABLE TO REFUND YOU. ONCE WE HAVE RECEIVED THE ITEM(S) WE WILL REFUND THE COST OF THE ITEM(S). SHIPPING CHARGES WILL NOT BE REFUNDED. WE ONLY REFUND TO THE CREDIT CARD \/ PAYPAL ACCOUNT THAT WAS USED TO PLACE THE ORDER.<\/p>"
+        }
+      },
+      "shipping-policies": {
+        "type": "shipping-policies",
+        "settings": {
+          "section_title": "Shipping policies",
+          "text": "<p>WORLDWIDE .$10-$20 STANDARD SHIPPING.<br>ISRAEL - FREE STANDARD SHIPPING.<\/p>\n<p>WE SHIP VIA REGISTERED AIR MAIL WITH A TRACKING NUMBER. PLEASE EXPECT UP TO FIVE BUSINESS DAYS FOR THE PACKAGE TO BE SHIPPED. ONCE SHIPPED YOU WILL BE PROVIDED WITH SHIPPING INFO. PLEASE CONTACT US FOR EXPRESS SHIPPING OPTIONS.<\/p>"
+        }
+      },
+      "returns-exchanges": {
+        "type": "returns-exchanges",
+        "settings": {
+          "section_title": "Returns & Exchanges",
+          "text": "<p>IF YOU EXPERIENCE ANY PROBLEMS WITH&nbsp; A PIECE YOU HAVE PURCHASED, PLEASE CONTACT US VIA MAIL&nbsp; INFO@PORNTEES.COM AND WE WILL RESOLVE IT IN ANY WAY WE CAN.<\/p>"
+        }
       }
     },
     "content_for_index": [
       "hero",
       "featured-collections",
       "feature-row",
-      "slideshow"
+      "slideshow",
+      "1587043969102"
     ]
   },
   "presets": {

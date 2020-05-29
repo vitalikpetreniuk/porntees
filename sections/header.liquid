@@ -71,7 +71,7 @@
           {% endif %}
             {% if section.settings.logo %}
               {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-              <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
+              <a href="/collections/all" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
                 {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
                 <img class="lazyload js"
                      src="{{ section.settings.logo | img_url: '300x300' }}"
@@ -90,7 +90,7 @@
                 </noscript>
               </a>
             {% else %}
-              <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
+              <a class="site-header__logo-link" href="/collections/all">{{ shop.name }}</a>
             {% endif %}
           {% if request.page_type == 'index' %}
             </h1>
@@ -103,12 +103,20 @@
         </div>
       </div>
       <div class="grid-item grid-item-right">
-        <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-          <span class="cart-title">#CART</span>
-          <span class="icon__fallback-text">#CART</span>
-          <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %}" data-cart-count-bubble>
-            <span data-cart-count>{{ cart.item_count }}</span>
-            <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+        <nav>
+          <ul>
+            <li><a href="/blogs/past-capsules">#PAST CAPSULES</a></li>
+            <li><a href="/pages/gallery">#JOURNAL</a></li>
+            <li><a href="/pages/info">#FACTS</a></li>
+          </ul>
+        </nav>
+        <span class="open-info">#INFO</span>
+        <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart{% if cart.item_count == 0 %} empty{% endif %}">
+          <div class="cart-title">#CART</div>
+          <div id="CartCount" class="site-header__cart-count">
+            <div data-cart-count="{{cart.item_count}}">
+              <span>#{{ cart.item_count }}</span>
+            </div>
           </div>
         </a>
       </div>
@@ -125,6 +133,22 @@
       <span><span>porntees</span><span>available</span></span>
       <span><span>porntees</span><span>available</span></span>
       <span><span>porntees</span><span>available</span></span>
+      <span><span>porntees</span><span>available</span></span>
+      <span><span>porntees</span><span>available</span></span>
+    </a>
+    <a class="hh-tablet" href="/collections/all">
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
+      <span><span>porntees</span></span>
+      <span><span>shop</span></span>
     </a>
   </div>
 
