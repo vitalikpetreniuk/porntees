@@ -279,6 +279,15 @@
               "cta_label": ""
             }
           },
+          "1590162413935": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal7.png",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
           "1588227955391": {
             "type": "image",
             "settings": {
@@ -311,6 +320,15 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/81AWHunyR5L._SX522.png",
               "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "1590162420729": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/journal6.png",
+              "alignment": "top",
               "link": "",
               "cta_label": ""
             }
@@ -467,24 +485,6 @@
               "link": "",
               "cta_label": ""
             }
-          },
-          "1590162413935": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/journal7.png",
-              "alignment": "center",
-              "link": "",
-              "cta_label": ""
-            }
-          },
-          "1590162420729": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/journal6.png",
-              "alignment": "top",
-              "link": "",
-              "cta_label": ""
-            }
           }
         },
         "block_order": [
@@ -521,7 +521,7 @@
         "type": "stockists",
         "settings": {
           "section_title": "Stockists",
-          "text": "<p>WE MUST SHOP<br>DIZENGOFF ST 138. TEL AVIV-YAFO<br>MONTEFIORE ST 30. TEL AVIV-YAFO<\/p>\n<p><\/p>\n<p>BOUTIQUE 5<br>LINCOLN ST 5, TEL AVIV-YAFO<\/p>\n<p><\/p>"
+          "text": "<p>WE MUST SHOP<br>DIZENGOFF ST 138. TEL AVIV-YAFO<br>MONTEFIORE ST 30. TEL AVIV-YAFO<\/p>\n<p><\/p>\n<p>BOUTIQUE 5<br>LINCOLN ST 5, TEL AVIV-YAFO<\/p>"
         }
       },
       "returns-policy": {

@@ -136,6 +136,7 @@
     </main>
 
     {% section 'footer' %}
+    <div class="journal-carousel">{% section 'gallery' %}</div>
 
     <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
       {{- 'sections.slideshow.navigation_instructions' | t -}}
@@ -150,6 +151,7 @@
 </body>
 <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'owl.carousel.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'jquery.keyframes.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
 </html>
